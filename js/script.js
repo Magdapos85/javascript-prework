@@ -1,5 +1,16 @@
 
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+function playGame(playerInput){
+  function clearMessages ()
+  document.getElementById('play-rock').addEventListener('click', function(){
+  playGame(' Kamien');
+});
+document.getElementById('play-paper').addEventListener('click', function(){
+  playGame('Papier');
+});
+document.getElementById('play-scissors').addEventListener('click', function(){
+  playGame('Nozyce');
+});
+/*let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');*/
 
 console.log('Gracz wpisał: ' + playerInput);
 
@@ -100,3 +111,5 @@ let playerMove = getMoveName(playerInput);
 
 displayResult (computerMove, playerMove);
 console.log('moves:', argComputerMove, argPlayerMove);
+}
+playGame(3);
