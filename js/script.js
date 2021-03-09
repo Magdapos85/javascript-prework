@@ -1,51 +1,10 @@
-
-function playGame(playerInput){
+{
+const playGame = function (playerInput){
   clearMessages ()
 
 
+const getMoveName = function (argMoveId){
 
-console.log('Gracz wpisał: ' + playerInput);
-
-
-function getMoveName (MoveName){
-  if(MoveName == '1'){
-      return 'kamień';
-  }
-  else if (MoveName == '2') {
-  	return 'papier';
-  }
-  else if (MoveName == '3') {
-      return 'nożyce';
-    }
-}
-
-
-
-
-
-function displayResult(argComputerMove, argPlayerMove){
-
-  printMessage('Twój ruch to: ' + argPlayerMove);
-  printMessage('Ruch komputera: ' + argComputerMove);
-
-  if (argPlayerMove == argComputerMove) {
-      printMessage('Remis');
-  } else if(argPlayerMove == 'kamień' && argComputerMove == 'nożyce'){
-    console.log(abcd);
-   printMessage('Ty wygrywasz');
- } else if(argPlayerMove == 'papier' && argComputerMove == 'kamień') {
-   printMessage('Ty wygrywasz');
- } else if(argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
-      printMessage('Ty wygrywasz');
-  } else {
-      printMessage('Komputer wygrał');
-  }
-
-}
-
-
-function getMoveName(argMoveId){
-    console.log('argMoveID:', argMoveId);
     if(argMoveId == 1){
       return 'kamień';
     } else if (argMoveId == 2) {
@@ -58,8 +17,7 @@ function getMoveName(argMoveId){
     }
 }
 
-function displayResult(argComputerMove, argPlayerMove){
-    console.log('argComputerMove:', argComputerMove, 'argPlayerMove:', argPlayerMove);
+const displayResult = function (argComputerMove, argPlayerMove){
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 
     if ( argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
@@ -86,18 +44,13 @@ function displayResult(argComputerMove, argPlayerMove){
 }
 
 const randomNumber = Math.floor(Math.random() * 3 + 1);
-console.log('Wylosowana liczba to: ' + randomNumber);
 const computerMove = getMoveName(randomNumber);
-
-
-console.log('Gracz wpisał: ' + playerInput);
 const playerMove = getMoveName(playerInput);
 
 displayResult (computerMove, playerMove);
 
 }
 playGame(3);
-console.log (document.getElementById('play-rock'))
 document.getElementById('play-rock').addEventListener('click', function(){
 playGame('1');
 });
@@ -107,3 +60,4 @@ playGame('2');
 document.getElementById('play-scissors').addEventListener('click', function(){
 playGame('3');
 });
+}
